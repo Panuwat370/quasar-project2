@@ -8,20 +8,20 @@
       <q-input
         filled
         v-model="name"
-        label="Your name *"
-        hint="Name and surname"
+        label="ชื่อ นามสกุล *"
+        hint="ชื่อ และ นามสกุล"
         lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Please type something']"
+        :rules="[ val => val && val.length > 0 || 'กรุณาใส่ชื่อและนามสกุล']"
       />
       <q-input
         filled
         type="number"
         v-model="age"
-        label="Your age *"
+        label="อายุ *"
         lazy-rules
         :rules="[
-          val => val !== null && val !== '' || 'Please type your age',
-          val => val > 0 && val < 100 || 'Please type a real age'
+          val => val !== null && val !== '' || 'กรุณาใส่อายุ',
+          val => val > 0 && val < 100 || 'กรุณาใส่อายุจริง'
         ]"
       />
       <q-toggle v-model="accept" label="I accept the license and terms" />
@@ -54,7 +54,7 @@ export default {
             color: 'red-5',
             textColor: 'white',
             icon: 'warning',
-            message: 'You need to accept the license and terms first'
+            message: 'คุณจำเป็นต้องยอมรับ'
           })
         }
         else {
@@ -62,7 +62,7 @@ export default {
             color: 'green-4',
             textColor: 'white',
             icon: 'cloud_done',
-            message: 'Submitted'
+            message: 'ข้อมูลได้รับการยืนยัน'
           })
         }
       },
